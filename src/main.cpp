@@ -19,3 +19,15 @@ void setup() {
     analogReadResolution(12);
     Serial.println("SR Force Measurement System (UNO R4 WiFi)");
 }
+
+void loop() {
+    fsrValue = analogRead(fsrPin);
+    Serial.print("FSR Raw Value: ");
+    Serial.println(fsrValue);
+    if (fsrValue > threshold) {
+        Serial.println("Pressure Detected!");
+    } else {
+        Serial.println("No Pressure.");
+    }
+    delay(1000);
+}
