@@ -12,3 +12,10 @@
 const int fsrPin = A0;
 int fsrValue = 0;
 int threshold = 800;
+
+void setup() {
+    Serial.begin(9600);
+    while (!Serial);
+    analogReadResolution(12);
+    Serial.println("SR Force Measurement System (UNO R4 WiFi)");
+}
